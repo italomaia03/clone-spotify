@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,700;1,200;1,700&family=Rubik:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  max-width: 450px;
+  margin: 0px auto;
+  padding-bottom: 130px;
+}
+
+header {
+  display: flex;
+  padding: 40px 0 32px;
+  flex-direction: column;
+  text-align: center;
+}
+
+header svg {
+  height: 27px;
+}
+
+header h2 {
+  margin-top: 40px;
+  font-size: 2rem;
+  letter-spacing: -0.13rem;
+  font-weight: 600;
+}
+
+.facebook,
+.google {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.facebook a,
+.google a {
+  border: 0px;
+  border-radius: 500px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.facebook a {
+  background-color: #405a93;
+  color: white;
+}
+
+.facebook span,
+.google span {
+  width: 312px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 24px;
+  gap: 16px;
+}
+
+.facebook span svg,
+.google span svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+}
+
+.google a {
+  border: 2px solid rgb(83, 83, 83);
+  color: #535353;
+}
+
+.divider {
+  display: table;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  margin: 0px auto 1em;
+  color: rgb(127, 127, 127);
+  position: relative;
+  text-align: center;
+  width: 85%;
+}
+
+.divider::before,
+.divider::after {
+  border-top: 1px solid rgb(204, 204, 204);
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 0.8em;
+  width: 42%;
+}
+
+.formsFields {
+  padding-bottom: 24px;
+}
+
+.labels {
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
