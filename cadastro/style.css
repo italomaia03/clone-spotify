@@ -46,25 +46,26 @@ header h2 {
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
-  transition-property: background-color, border-color, color, box-shadow, filter, transform;
+  transition-property: background-color, border-color, color, box-shadow, filter,
+    transform;
   transition-duration: 33ms;
 }
 
 .facebook a:hover,
-.google a:hover{
+.google a:hover {
   transform: scale(1.1);
-} 
-
-.facebook a:hover{
-  background-color: #384F81;
 }
 
-.facebook a:active{
-  background-color: #31446F;
+.facebook a:hover {
+  background-color: #384f81;
+}
+
+.facebook a:active {
+  background-color: #31446f;
   transform: scale(1);
 }
 
-.google a:active{
+.google a:active {
   transform: scale(1);
 }
 
@@ -121,7 +122,7 @@ header h2 {
   padding-bottom: 24px;
 }
 
-#phone{
+#phone {
   font-size: 14px;
   padding-top: 8px;
   color: black;
@@ -135,13 +136,13 @@ header h2 {
   padding-bottom: 8px;
 }
 
-#pInfo{
-  font-size: .875rem;
+#pInfo {
+  font-size: 0.875rem;
   font-weight: 400;
   margin-top: 8px;
 }
 
-.p-data{
+.p-data {
   border: 0px;
   font-size: 1rem;
   width: 100%;
@@ -154,12 +155,12 @@ header h2 {
   color: #0000;
 }
 
-#pwd-cont{
+#pwd-cont {
   position: relative;
   width: 100%;
 }
 
-.show-pwd{
+.show-pwd {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -168,7 +169,7 @@ header h2 {
   color: #6a6a6a;
 }
 
-.show-pwd button{
+.show-pwd button {
   box-sizing: border-box;
   font-size: 1rem;
   font-weight: 700;
@@ -181,7 +182,8 @@ header h2 {
   text-transform: none;
   touch-action: manipulation;
   transition-duration: 33ms;
-  transition-property: background-color, border-color, color, box-shadow, filter, transform;
+  transition-property: background-color, border-color, color, box-shadow, filter,
+    transform;
   user-select: none;
   vertical-align: middle;
   transform: translate3d(0px, 0px, 0px);
@@ -196,32 +198,32 @@ header h2 {
   position: relative;
 }
 
-.show-pwd button:hover{
+.show-pwd button:hover {
   transform: scale(1.04);
   fill: black;
 }
 
-#date{
+#date {
   display: flex;
   justify-content: space-between;
 }
 
-#day-div{
+#day-div {
   width: 20%;
 }
 
-#year-div{
+#year-div {
   width: 25%;
 }
 
-#month-div{
+#month-div {
   position: relative;
   inline-size: 100%;
   display: flex;
   align-items: center;
 }
 
-#month{
+#month {
   border: 0px;
   font-size: 1rem;
   font-weight: 400;
@@ -239,18 +241,18 @@ header h2 {
   block-size: 48px;
 }
 
-#month-div svg{
-  color:#878787;
+#month-div svg {
+  color: #878787;
   pointer-events: none;
   position: absolute;
   right: 14px;
 }
 
-#month-div:required:invalid{
+#month-div:required:invalid {
   color: rgb(83, 83, 83);
 }
 
-fieldset{
+fieldset {
   box-sizing: border-box;
   padding-block-end: 24px;
   min-inline-size: 0px;
@@ -260,16 +262,16 @@ fieldset{
   border: 0px;
 }
 
-fieldset legend{
+fieldset legend {
   padding-block-end: 8px;
 }
 
-.field-inputs{
+.field-inputs {
   display: flex;
   flex-wrap: wrap;
 }
 
-.field-inputs div{
+.field-inputs div {
   box-sizing: border-box;
   align-items: center;
   display: flex;
@@ -278,8 +280,7 @@ fieldset legend{
   min-block-size: 32px;
 }
 
-
-.field-inputs div label{
+.field-inputs div label {
   display: flex;
   position: relative;
   min-inline-size: 0px;
@@ -290,7 +291,7 @@ fieldset legend{
   overflow-wrap: break-word;
 }
 
-.checkboxes{
+.checkboxes {
   box-sizing: border-box;
   display: flex;
   align-items: baseline;
@@ -299,7 +300,7 @@ fieldset legend{
   min-block-size: 32px;
 }
 
-.checkboxes label{
+.checkboxes label {
   position: relative;
   top: -2px;
   overflow-wrap: break-word;
@@ -310,11 +311,11 @@ fieldset legend{
   padding-right: 24px;
 }
 
-footer{
+footer {
   text-align: center;
 }
 
-footer div p{
+footer div p {
   box-sizing: border-box;
   margin-block: 0px;
   font-size: 0.6875rem;
@@ -322,17 +323,17 @@ footer div p{
   padding-bottom: 12px;
 }
 
-footer a{
+footer a {
   color: rgb(29, 185, 84);
 }
 
-#signup{
+#signup {
   display: flex;
   justify-content: space-around;
   margin-bottom: 24px;
 }
 
-#signup button{
+#signup button {
   box-sizing: border-box;
   font-size: 1.125rem;
   font-weight: 700;
@@ -347,7 +348,8 @@ footer a{
   text-transform: none;
   touch-action: manipulation;
   transition-duration: 33ms;
-  transition-property: background-color, border-color, color, box-shadow, filter, transform;
+  transition-property: background-color, border-color, color, box-shadow, filter,
+    transform;
   transform: translate3d(0px, 0px, 0px);
   padding: 0px;
   min-inline-size: 0px;
@@ -365,23 +367,23 @@ footer a{
   padding-inline: 48px;
 }
 
-#signup button:hover{
+#signup button:hover {
   transform: scale(1.05);
-  background-color:#1fdf64;
+  background-color: #1fdf64;
 }
 
-#signup button:hover:active{
+#signup button:hover:active {
   background-color: #169c46;
   transform: scale(1);
 }
 
-footer>p{
+footer > p {
   font-weight: 400;
   font-size: 1rem;
   padding-bottom: 12px;
 }
 
-.error{
+.error {
   font-size: 0.875rem;
   font-weight: 400;
   display: flex;
@@ -390,7 +392,7 @@ footer>p{
   color: #d31225;
 }
 
-.error svg{
+.error svg {
   width: 1.25rem;
   margin-right: 4px;
   flex-shrink: 0;
