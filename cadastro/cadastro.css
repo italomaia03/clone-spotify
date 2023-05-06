@@ -46,6 +46,26 @@ header h2 {
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  transition-property: background-color, border-color, color, box-shadow, filter, transform;
+  transition-duration: 33ms;
+}
+
+.facebook a:hover,
+.google a:hover{
+  transform: scale(1.1);
+} 
+
+.facebook a:hover{
+  background-color: #384F81;
+}
+
+.facebook a:active{
+  background-color: #31446F;
+  transform: scale(1);
+}
+
+.google a:active{
+  transform: scale(1);
 }
 
 .facebook a {
@@ -99,7 +119,12 @@ header h2 {
 
 .formsFields {
   padding-bottom: 24px;
+}
 
+#phone{
+  font-size: 14px;
+  padding-top: 8px;
+  color: black;
 }
 
 .labels {
@@ -160,7 +185,7 @@ header h2 {
   user-select: none;
   vertical-align: middle;
   transform: translate3d(0px, 0px, 0px);
-  color: #6a6a6a;
+  fill: #6a6a6a;
   min-inline-size: 0px;
   padding-block: 12px;
   min-block-size: 48px;
@@ -169,6 +194,11 @@ header h2 {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.show-pwd button:hover{
+  transform: scale(1.04);
+  fill: black;
 }
 
 #date{
@@ -349,4 +379,20 @@ footer>p{
   font-weight: 400;
   font-size: 1rem;
   padding-bottom: 12px;
+}
+
+.error{
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+  color: #d31225;
+}
+
+.error svg{
+  width: 1.25rem;
+  margin-right: 4px;
+  flex-shrink: 0;
+  fill: #d31225;
 }
