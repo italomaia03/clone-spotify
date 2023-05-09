@@ -122,6 +122,14 @@ header h2 {
   padding-bottom: 24px;
 }
 
+.formsFields input:hover{
+  box-shadow: inset 0 0 0 1px black;
+}
+
+.formsFields input:focus{
+  box-shadow: inset 0 0 0 1.5px #0000;
+}
+
 #phone {
   font-size: 14px;
   padding-top: 8px;
@@ -152,7 +160,6 @@ header h2 {
   padding-right: 8px;
   min-block-size: 48px;
   box-shadow: inset 0 0 0 1px #878787;
-  color: #0000;
 }
 
 #pwd-cont {
@@ -383,10 +390,10 @@ footer > p {
   padding-bottom: 12px;
 }
 
-.error {
+.error, .field-inputs .error {
+  display: none;
   font-size: 0.875rem;
   font-weight: 400;
-  display: flex;
   margin-top: 8px;
   align-items: center;
   color: #d31225;
