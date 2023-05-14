@@ -2,6 +2,7 @@
 const errors = Array.from(document.querySelectorAll(".error"));
 const signUpBtn = document.querySelector("#signup button");
 const requeridos = Array.from(document.querySelectorAll(".required"));
+const genders = Array.from(document.querySelectorAll(".gender"));
 
 // objeto que define os padrões de validação de cada input
 const padroes = {
@@ -11,8 +12,7 @@ const padroes = {
   day: /\d{1,2}/,
   month: /.\w/,
   year: /\d{4}/,
-  gender: /.\w/,
-  termsUse: /.\w/,
+  termsUse: /\w/,
 };
 
 // objeto que define a mensagem de erro a ser exibida quando o respectivo campo de input não é
@@ -24,7 +24,6 @@ const erroVazio = {
   day: "Enter a valid day of the month.",
   month: "Select your birth month.",
   year: "Enter a valid year.",
-  gender: "Select your gender.",
   termsUse: "Please accept the terms and conditions to continue.",
 };
 
@@ -33,12 +32,11 @@ const erroVazio = {
 const erroValidacao = {
   email: "This email is invalid. Make sure it's written like example@email.com",
   password: "Your password is too short.",
-  username: "",
+  username: "Enter a name for your profile.",
   day: "Enter a valid day of the month.",
   month: "",
   year: "Enter a valid year.",
-  gender: "",
-  termsUse: "",
+  termsUse: "Please accept the terms and conditions to continue.",
 };
 
 // função que verifica se os campos de input estão vazios ou se são válidos
@@ -49,7 +47,7 @@ function verificarCampo(nomeCampo, padrao, erroVazio, erroValidacao) {
   let erro = selecionarErro(`${nomeCampo}`);
   let errorMessage = erro.lastChild;
 
-  if (campo.value === "") {
+  if (campo.value === "" || !campo.checked) {
     errorMessage.textContent = erroVazio;
     mostrarErro(campo, erro);
   } else if (campo.value !== "" && !padrao.test(campo.value)) {
@@ -80,6 +78,17 @@ function ocultarErro(nomeCampo, erro) {
   nomeCampo.style.boxShadow = "inset 0 0 0 1px black";
 }
 
+// função exclusiva para validar o campo gender
+function validateGender() {
+  const erro = selecionarErro("gender");
+
+  if (genders.find((e) => e.checked)) {
+    erro.style.display = "none";
+  } else {
+    erro.style.display = "flex";
+  }
+}
+
 // trecho de código que adiciona os eventos declarados em events para as divs
 // da classe .required. A cada evento, busca-se validar o respectivo campo ou,
 // mostrar a devida frase de erro.
@@ -87,14 +96,34 @@ requeridos.forEach((element) => {
   let events = ["change", "input", "focusout"];
   events.forEach((event) => {
     element.addEventListener(event, () => {
-      let nomeCampo = element.getAttribute("id");
+      let nomeCampo = element.id;
 
       verificarCampo(
         nomeCampo,
-        padroes[nomeCampo],
-        erroVazio[nomeCampo],
-        erroValidacao[nomeCampo]
+        padroes[`${nomeCampo}`],
+        erroVazio[`${nomeCampo}`],
+        erroValidacao[`${nomeCampo}`]
       );
     });
+  });
+});
+
+// adição de eventos de validação dos campos de gênero
+genders.forEach((e) => {
+  e.addEventListener("change", validateGender);
+});
+
+signUpBtn.addEventListener("click", () => {
+  requeridos.forEach((element) => {
+    let nomeCampo = element.id;
+
+    verificarCampo(
+      nomeCampo,
+      padroes[`${nomeCampo}`],
+      erroVazio[`${nomeCampo}`],
+      erroValidacao[`${nomeCampo}`]
+    );
+
+    validateGender();
   });
 });
