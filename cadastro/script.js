@@ -2,7 +2,7 @@
 const errors = Array.from(document.querySelectorAll(".error"));
 const signUpBtn = document.querySelector("#signup button");
 const requeridos = Array.from(document.querySelectorAll(".required"));
-const genders = Array.from(document.querySelectorAll(".gender"));
+const checkFields = Array.from(document.querySelectorAll(".checkfields"));
 
 // objeto que define os padrões de validação de cada input
 const padroes = {
@@ -42,12 +42,12 @@ const erroValidacao = {
 // função que verifica se os campos de input estão vazios ou se são válidos
 // se todos os campos estiverem devidamente preenchidos, a propridade de
 // display das mensagens de erro permanecerão como 'none'
-function verificarCampo(nomeCampo, padrao, erroVazio, erroValidacao) {
+function validarCampos(nomeCampo, padrao, erroVazio, erroValidacao) {
   const campo = document.getElementById(`${nomeCampo}`);
   let erro = selecionarErro(`${nomeCampo}`);
   let errorMessage = erro.lastChild;
 
-  if (campo.value === "" || !campo.checked) {
+  if (campo.value === "") {
     errorMessage.textContent = erroVazio;
     mostrarErro(campo, erro);
   } else if (campo.value !== "" && !padrao.test(campo.value)) {
@@ -78,14 +78,25 @@ function ocultarErro(nomeCampo, erro) {
   nomeCampo.style.boxShadow = "inset 0 0 0 1px black";
 }
 
-// função exclusiva para validar o campo gender
-function validateGender() {
-  const erro = selecionarErro("gender");
+// função para validar os campos gender e termsUse
+function validarCheckFields() {
+  const erros = Array.from(document.querySelectorAll(".error.checkfields"));
+  const [erroGender, erroTermsUse] = erros;
+  const checkedFields = checkFields.filter((e) => e.checked);
 
-  if (genders.find((e) => e.checked)) {
-    erro.style.display = "none";
+  if (checkedFields.length < 1) {
+    erros.forEach((erro) => (erro.style.display = "flex"));
+  } else if (checkedFields.length > 1) {
+    erros.forEach((erro) => (erro.style.display = "none"));
+  } else if (
+    checkedFields.length === 1 &&
+    checkedFields[0].className.includes("termsUse")
+  ) {
+    erroTermsUse.style.display = "none";
+    erroGender.style.display = "flex";
   } else {
-    erro.style.display = "flex";
+    erroTermsUse.style.display = "flex";
+    erroGender.style.display = "none";
   }
 }
 
@@ -98,7 +109,7 @@ requeridos.forEach((element) => {
     element.addEventListener(event, () => {
       let nomeCampo = element.id;
 
-      verificarCampo(
+      validarCampos(
         nomeCampo,
         padroes[`${nomeCampo}`],
         erroVazio[`${nomeCampo}`],
@@ -109,21 +120,22 @@ requeridos.forEach((element) => {
 });
 
 // adição de eventos de validação dos campos de gênero
-genders.forEach((e) => {
-  e.addEventListener("change", validateGender);
+checkFields.forEach((e) => {
+  e.addEventListener("change", validarCheckFields);
 });
 
+// evento que checa os campos ao apertar o botão de Sign In
 signUpBtn.addEventListener("click", () => {
   requeridos.forEach((element) => {
     let nomeCampo = element.id;
 
-    verificarCampo(
+    validarCampos(
       nomeCampo,
       padroes[`${nomeCampo}`],
       erroVazio[`${nomeCampo}`],
       erroValidacao[`${nomeCampo}`]
     );
 
-    validateGender();
+    validarCheckFields();
   });
 });
