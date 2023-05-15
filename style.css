@@ -6,15 +6,12 @@
   margin: 0;
   padding: 0;
   vertical-align: baseline;
+  text-decoration: none;
 }
 
 html {
   background-color: #121212;
   height: 100%;
-}
-
-a {
-  text-decoration: none;
 }
 
 body {
@@ -24,7 +21,7 @@ body {
   z-index: 0;
   display: grid;
   gap: 0px;
-  grid-template-areas: "left-sidebar main-view right-sidebar" "now-playing-bar now-playing-bar now-playing-bar";
+  grid-template-areas: "left-sidebar main-view right-sidebar" "footer footer footer";
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto;
   height: 100%;
@@ -33,6 +30,7 @@ body {
   min-width: 768px;
   scrollbar-width: none;
   width: 100%;
+  color: #b3b3b3;
 }
 
 header {
@@ -86,7 +84,6 @@ header {
   cursor: pointer;
   position: relative;
   text-align: center;
-  text-decoration: none;
   text-transform: none;
   touch-action: manipulation;
   transition-duration: 33ms;
@@ -103,7 +100,9 @@ header {
 }
 
 .services-btn:active,
-.signup-btn:active {
+.signup-btn:active,
+.lang button:active,
+.signup button:active {
   opacity: 0.7;
   outline: none;
   transform: scale(1);
@@ -111,12 +110,14 @@ header {
 }
 
 .services-btn:hover,
-.signup-btn:hover {
+.signup-btn:hover,
+.lang button:hover,
+.signup button:hover {
   transform: scale(1.04);
   color: #fff;
 }
 
-.container {
+header .container {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
@@ -143,7 +144,6 @@ header {
   display: inline-block;
   position: relative;
   text-align: center;
-  text-decoration: none;
   text-transform: none;
   touch-action: manipulation;
   transition-duration: 33ms;
@@ -177,6 +177,10 @@ header {
   transform: scale(1.04);
 }
 
+main {
+  display: grid;
+}
+
 .side-bar {
   background-color: #000;
   display: flex;
@@ -184,26 +188,48 @@ header {
   grid-area: left-sidebar;
   min-height: 0;
   position: relative;
-  width: 232px;
+  z-index: 4;
+  min-height: 0;
+  position: relative;
+  width: 230px;
 }
 
 nav {
   display: flex;
   flex-direction: column;
-  color: white;
-  gap: 32px;
+  height: 100%;
+  min-height: 0;
+}
+
+.side-bar .container {
+  display: flex;
+  cursor: default;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 24px;
+  user-select: none;
+  width: 100%;
 }
 
 .logo {
-  height: 40px;
-  max-width: 131px;
-  width: 100%;
-  padding: 24px 0;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: space-between;
 }
 
 .logo a {
-  padding: 0 24px;
+  border: 0;
+  flex: 1;
   margin-bottom: 18px;
+  padding: 0 24px;
+}
+
+.logo svg {
+  height: 40px;
+  max-width: 131px;
+  width: 100%;
 }
 
 ul {
@@ -216,9 +242,234 @@ ul li {
 
 ul li a {
   padding: 0 18px;
+  align-items: center;
+  border-radius: 4px;
+  display: flex;
+  gap: 16px;
+  height: 40px;
+  padding: 0 16px;
+  color: #b3b3b3;
+}
+
+.svg-icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  fill: #b3b3b3;
+}
+
+ul li a span {
+  box-sizing: border-box;
+  margin-block: 0px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #b3b3b3;
 }
 
 .preferences {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
   margin-top: 24px;
+  position: relative;
+}
+
+.preferences a {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  min-height: max-content;
+  opacity: 0.7;
+  padding: 8px 24px 8px 24px;
+  transition: opacity 0.2s linear;
+  width: 100%;
+}
+
+.preferences a:hover,
+.preferences a:focus {
+  opacity: 1;
+}
+
+.svg-container {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  height: 24px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  width: 24px;
+  background: #fff;
+  border-radius: 2px;
+  color: #000;
+  margin-right: 16px;
+}
+
+.liked-songs {
+  background: linear-gradient(135deg, #450af5, #c4efd9);
+  color: #fff;
+}
+
+.liked-songs svg {
+  fill: #fff;
+}
+
+.terms {
+  overflow: hidden;
+  z-index: 1;
+}
+
+.terms .container {
+  margin: 32px 0;
   padding: 0 24px;
+  text-align: start;
+}
+
+.terms .container div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inside,
+.outside {
+  margin-right: 16px;
+  margin-bottom: 8px;
+  line-height: inherit;
+  border: none;
+  padding: 0px;
+  color: #6a6a6a;
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+
+.outside:hover {
+  text-decoration: underline;
+}
+
+.lang {
+  margin-bottom: 32px;
+  padding: 0 24px;
+}
+
+.lang button {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  background-color: transparent;
+  border-radius: 500px;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  transition-duration: 33ms;
+  transition-property: background-color, border-color, color, box-shadow, filter,
+    transform;
+  user-select: none;
+  vertical-align: middle;
+  transform: translate3d(0px, 0px, 0px);
+  padding-block: 3px;
+  padding-inline: 32px 15px;
+  border: 1px solid #878787;
+  color: #fff;
+  min-block-size: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang svg {
+  display: flex;
+  position: absolute;
+  left: 12px;
+  fill: #fff;
+}
+
+footer {
+  grid-area: footer;
+  width: 100%;
+  z-index: 6;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-width: 620px;
+}
+
+.signup {
+  align-items: center;
+  background-image: linear-gradient(90deg, #af2896, #509bf5);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  padding: 11px 24px 7px 15px;
+}
+
+.signup div {
+  display: flex;
+  gap: 0.55rem;
+  flex-direction: column;
+}
+
+.signup p:first-child {
+  margin-block: 0px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.signup p:last-child {
+  margin-block: 0px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.signup button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: 0px;
+  border-radius: 500px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  transition-duration: 33ms;
+  transition-property: background-color, border-color, color, box-shadow, filter,
+    transform;
+  user-select: none;
+  vertical-align: middle;
+  transform: translate3d(0px, 0px, 0px);
+  padding: 0px;
+  min-inline-size: 0px;
+  align-self: center;
+}
+
+.signup button span {
+  box-sizing: border-box;
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  display: flex;
+  border-radius: 500px;
+  font-size: inherit;
+  min-block-size: 48px;
+  align-items: center;
+  justify-content: center;
+  padding-block: 8px;
+  padding-inline: 32px;
 }
