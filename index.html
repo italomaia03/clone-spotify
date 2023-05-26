@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
         <link
             href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png"
             rel="icon"
@@ -12,7 +12,7 @@
         />
         <title>Spotify - Web Player: Music for everyone</title>
     </head>
-    <body>
+    <body onload="handleGridElements">
         <header>
             <section id="top-bar">
                 <div class="nav-buttons">
@@ -198,203 +198,760 @@
         </aside>
         <main>
             <div class="main container">
-                <section class="focus content">
-                    <div class="title">
-                        <a href="#">
-                            <h2>Focus</h2>
-                        </a>
-                        <a href="#">Show all</a>
-                    </div>
-                    <div class="albums">
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
+                <div class="main-wrap">
+                    <section class="focus content">
+                        <div class="title">
+                            <a href="#">
+                                <h2>Focus</h2>
+                            </a>
+                            <a href="#">Show all</a>
+                        </div>
+                        <div class="albums" id="focus">
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
+                    </section>
+                    <section class="playlist content">
+                        <div class="title">
+                            <a href="#">
+                                <h2>Spotify Playlists</h2>
+                            </a>
+                            <a href="#">Show all</a>
+                        </div>
+                        <div class="albums" id="playlist">
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="play">
+                                    <button id="play">
+                                        <span>
+                                            <svg
+                                                role="img"
+                                                height="24"
+                                                width="24"
+                                                viewBox="0 0 24 24"
+                                                class="play-svg"
+                                            >
+                                                <path
+                                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
+                    </section>
+                    <section class="sleep content">
+                        <div class="title">
+                            <a href="#">
+                                <h2>Sleep</h2>
+                            </a>
+                            <a href="#">Show all</a>
+                        </div>
+                        <div class="albums">
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
+                            <div class="album">
+                                <div class="cover">
+                                    <div class="inner-img">
+                                        <img
+                                            src="https://picsum.photos/300"
+                                            alt="dummy image"
+                                        />
+                                    </div>
+                                    <div class="play">
+                                        <button id="play">
+                                            <span>
+                                                <svg
+                                                    role="img"
+                                                    height="24"
+                                                    width="24"
+                                                    viewBox="0 0 24 24"
+                                                    class="play-svg"
+                                                >
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="album-info">
+                                    <h3>Album</h3>
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Commodi vero ipsa
+                                        reiciendis iste eos deleniti natus
+                                        saepe, repellendus deserunt, quod fugit.
+                                        Doloribus debitis nam ex, dolore
+                                        quibusdam facere! Modi, minima!
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
-                            </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
-                            </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
-                            </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
-                            </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
-                            </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="album">
-                            <div class="cover">
-                                <img
-                                    src="https://picsum.photos/300"
-                                    alt="dummy image"
-                                />
-                            </div>
-                            <div>
-                                <h3>Album</h3>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi vero ipsa
-                                    reiciendis iste eos deleniti natus saepe,
-                                    repellendus deserunt, quod fugit. Doloribus
-                                    debitis nam ex, dolore quibusdam facere!
-                                    Modi, minima!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="playlist content">
-                    <div class="title">
-                        <a href="#">
-                            <h2>Spotify Playlists</h2>
-                        </a>
-                        <a href="#">Show all</a>
-                    </div>
-                </section>
-                <section class="sleep content">
-                    <div class="title">
-                        <a href="#">
-                            <h2>Sleep</h2>
-                        </a>
-                        <a href="#">Show all</a>
-                    </div>
-                </section>
+                    </section>
+                </div>
                 <section class="contacts"></section>
                 <section class="social-media"></section>
                 <section class="copyright"></section>
