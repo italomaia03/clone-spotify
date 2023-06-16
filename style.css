@@ -494,6 +494,7 @@ main {
     grid-area: main-view;
     width: auto;
     margin-top: 64px;
+    overflow: hidden;
 }
 
 .main {
@@ -502,6 +503,7 @@ main {
     flex-direction: column;
     padding-top: 24px;
     gap: 16px;
+    overflow-y: scroll;
 }
 
 .main .title {
